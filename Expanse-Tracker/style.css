@@ -28,7 +28,7 @@ html, body{
 
 .container{
     height: 90vh;
-    width: 30vw;
+    width: 28vw;
     background-color: rgb(96, 96, 96);
     color: white;
     margin-top: auto;
@@ -49,4 +49,66 @@ html, body{
     position: absolute;
     bottom: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
 }
+
+.inputs{
+    display: flex;
+    gap: 10px;
+}
+#text{
+width: 200px;
+}
+#amount{
+    width: 110px;
+}
+.button_container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button_container button{
+    width: 150px;
+    display: grid;
+    place-items: center;
+    height: 3rem;
+   border: none;
+   border-radius: 10px;
+}
+
+
+
+#earnBtn{
+    background-color: chartreuse;
+   
+}
+#expBtn{
+    background-color: red;
+    color: white;
+}
+
+.transactions{
+    display: flex;
+    flex-direction: column;
+    /* gap: 5px; */
+    margin: 10px;
+}
+.transaction{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    margin: 10px;
+
+    /* border: 1px solid black; */
+}
+.transaction p{
+   flex: 1;
+}
+.transaction h3{
+    margin-left: 10px;
+ }
