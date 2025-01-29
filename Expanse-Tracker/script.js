@@ -16,17 +16,29 @@ const renderTransactions = () => {
     let expense = 0;
     let net = 0;
 
+    transactionContainerEl.innerHTML = ""
     transactios.forEach((transaction) => {
        const {id, amount, text, type} = transaction;
+       const isCredit = type === "credit" ? true : false;
+       const sign = isCredit ? "+" :  "-";
+       
 
         const transactionEl = `
             <div class="transaction" id="${id}">
                 <p>${text}</p>
-                <h3>${amount}</h4>
-                <h3 id="status">${type}</h3>
+                <h3> ${sign}  $ ${amount}</h4>
+                <h3 id="status" class = "${isCredit ? "credit" : "debit"}">${isCredit ? "C" : "D"}</h3>
             </div>
         `;
+
+        earning += isCredit ? amount :0;
+        expense += !isCredit ? amount :0;
+        net = earning - expense;
+        transactionContainerEl.insertAdjacentHTML('afterbegin', transactionEl)
     })
+     netAmountEl.textContent = Number(net);
+     earningEl.innerHTML = `${earning}`;
+     expenseEl.innerHTML = `${expense}`
 
 
 }
@@ -51,15 +63,6 @@ function expense(amount) {
 }
 
 // global state
-const state = {
-    earnings: 0,
-    expense: 0,
-    net: 0,
-    transactions: [
-        { id: 5, text: "Demo", amount: 500, type: "credit", },
-        { id: 5, text: "Demo Debit", amount: 200, type: "debit", },
-    ]
-}
 
 
 function transactionHistory(data, type) {
@@ -99,12 +102,27 @@ const addTransactions = ((e) => {
     }
 
     state.transactions.push(transaction)
-
+    renderTransactions()
 
     console.log({ state });
 
 })
 
+const state = {
+    earnings: 0,
+    expense: 0,
+    net: 0,
+    transactions: [
+{
+    id: Math.floor(Math.random() * 9999),
+    text: "example",
+    amount: 10,
+    type: "credit" 
+}
+    ]
+}
+
+renderTransactions()
 
 form.addEventListener('submit', addTransactions);
 
