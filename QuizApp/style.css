@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.container {
+    width: 300px;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(./QuizAppBG.jpg);
+    background-size: cover;
+    background-position: contain;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-section {
+    height: 37%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
+.results p{
+   word-spacing: 2%;
+}
+.components{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+ 
+}
+
+.bottom-section{
+    padding: 40px 0;
+    border-top: 1px solid black;
+   
+}
+
+
+ul{
+    display: grid;
+    place-items: center;
+    gap: 10px;
+}
+
+li{
+    background-color: #efefef;
+    list-style-type: none;
+    border-radius: 8px;
+    padding: 5px;
+    width: 70%;
+}
+.button-section{
+  position: absolute;
+  left: 40%;
+  bottom: 10px;
+}
