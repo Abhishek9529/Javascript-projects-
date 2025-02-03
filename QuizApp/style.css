@@ -24,8 +24,8 @@ body {
 }
 
 .container {
-    width: 300px;
-    height: 500px;
+    width: 400px;
+    height: 80vh;
     border: none;
     border-radius: 10px;
     overflow: hidden;
@@ -59,7 +59,7 @@ body {
 }
 
 .bottom-section{
-    padding: 40px 0;
+    padding: 20px 0;
     border-top: 1px solid black;
    
 }
@@ -76,10 +76,19 @@ li{
     list-style-type: none;
     border-radius: 8px;
     padding: 5px;
-    width: 70%;
+    width: 90%;
 }
 .button-section{
   position: absolute;
-  left: 40%;
+  left: 45%;
   bottom: 10px;
+}
+
+#right{
+    background-color: rgb(169, 224, 170);
+    border: 2px solid rgb(2, 155, 17);
+}
+#wrong{
+    background-color: rgb(231, 183, 183);
+    border: 2px solid rgb(158, 13, 13);
 }
