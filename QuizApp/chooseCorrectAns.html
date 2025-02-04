@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css" media="all">
+    body {
+     display :flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+    }
+    button{
+      margin: 5px;
+      padding: 10px;
+      border:none;
+      border-radius: 8px;
+      width: 200px;
+    }
+
+    #right {
+      background-color: #94FFBC;
+      border: 1px solid #28AD5C;
+    }
+
+    #wrong {
+      background-color: #FF7878;
+      border: 1px solid #DF0F0F;
+    }
+  </style>
+  <title>Button Click Event</title>
+</head>
+
+<body>
+  <h3>Which of the following is the correct file extension to save a JavaScript file?</h3>
+  <button id="correct">.js</button>
+  <button id="inCorrect">.java</button>
+  <button id="inCorrect">.py</button>
+  <button id="inCorrect">.html</button>
+
+  <script>
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+
+        if (this.id === 'correct') {
+          console.log('');
+          button.id = 'right'
+        }
+        else {
+          console.log('inCorrect');
+          button.id = 'wrong'
+        }
+        buttons[0].id = 'right'
+
+        buttons.forEach(btn => {
+          btn.disabled = true;
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
