@@ -38,6 +38,7 @@ function displayQuestions() {
     for (let i = 0; i < 4; i++) {
         let li = document.createElement('li');
         li.textContent = allOptions[i]
+        li.classList.add('btn')
         li.textContent == questionArr[idx].correct_answer ?  li.id ='correct-option' :  li.id = 'incorrect-option';
         fragment.appendChild(li)
     }
@@ -55,10 +56,12 @@ function displayQuestions() {
 
 function checkAnswer(item, e){
     item.id === 'correct-option' ? (item.id = 'right') : (item.id = 'wrong')
-    // item.id === 'correct-option' ? score++ : '';
-    // scoreEl.textContent += Number(score)
-    // console.log(score);
-    
+    const btns = document.querySelectorAll('.btn');
+    btns.forEach(btn => {
+        btn.disabled = true;
+    })
+    let correctAns = document.getElementById('correct-option')
+    correctAns.id = 'right';
     
 }
 
