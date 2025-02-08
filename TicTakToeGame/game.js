@@ -1,4 +1,5 @@
 const boxes = document.querySelectorAll('.btn')
+const reset = document.querySelector('#reset')
 console.log(boxes);
 let trunO = true;
 
@@ -33,11 +34,21 @@ boxes.forEach((btn) => {
     })
 })
 
+function enableAll(){
+    boxes.forEach((box)=>{
+        box.textContent = '';
+        box.disabled = false;
+    })
+}
 function disableAll() {
     boxes.forEach((box) => {
         box.disabled = true;
     })
 }
+
+reset.addEventListener('click', ()=>{
+    enableAll();
+})
 
 function checkWinner() {
     for (pattern of winPatterns) {
