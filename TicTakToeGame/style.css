@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(196, 191, 191);
+    display:grid;
+    place-items: center;
+}
+
+.game{
+    height: 330px;
+    width: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn{
+    font-size: 3rem;
+    height: 100px;
+    width: 100px;
+    border-radius: 8px;
+    border: none;
+}
