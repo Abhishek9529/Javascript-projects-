@@ -29,3 +29,17 @@ html, body{
     border-radius: 8px;
     border: none;
 }
+.container{
+    display: grid;
+    place-items: center;
+    gap: 20px;
+}
+
+#reset{
+    display: grid;
+    place-items: center;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: gold;
+}
