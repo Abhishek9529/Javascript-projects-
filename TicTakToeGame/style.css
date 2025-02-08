@@ -23,7 +23,8 @@ html, body{
 }
 
 .btn{
-    font-size: 3rem;
+    font-size: 5rem;
+    font-weight: 700;
     height: 100px;
     width: 100px;
     border-radius: 8px;
@@ -42,4 +43,21 @@ html, body{
     border: none;
     border-radius: 8px;
     background-color: gold;
+}
+
+/* .x{
+    color: red;
+    /* background-color: ; */
+/* } */
+/* .o{ */
+    /* color: rgb(178, 255, 62);
+} */ 
+
+.x{
+    background-color: red;
+    color: white;
+}
+.o{
+    color: white;
+    background-color: rgb(178, 255, 62); 
 }
