@@ -1,0 +1,22 @@
+*{
+margin: 0;
+  padding: 0;  
+}
+p{
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.showDetails{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+
+#result{
+  
+  font-size: 1rem;
+  font-weight:400 ;
+}
