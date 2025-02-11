@@ -1,7 +1,9 @@
-let showParagraph = document.querySelector('#para')
-let result = document.querySelector('#result')
-let displayCurrentTime = document.querySelector('.timer')
-let totalTimeEl = document.querySelector('#totalTime')
+let showParagraph = document.querySelector('#para');
+let result = document.querySelector('#result');
+let displayCurrentTime = document.querySelector('.timer');
+let totalTimeEl = document.querySelector('#totalTime');
+let accuracyEl = document.querySelector('#accuracy');
+let outputEl = document.querySelector('.output')
 let timer = 0;
 let interval;
 
@@ -14,8 +16,12 @@ const getdata = async () => {
     const response = await fetch(url, options);
     const data = await response.json();
 
-    if (data && data.data && data.data.content) {
-      paragraph = data.data.content
+    if (data && data.data && data.data.content) {``
+      paragraph = await data.data.content
+      if(!showParagraph){
+        console.log('paragraph not found...');
+        
+      }
       showParagraph.textContent = paragraph
     }
     else{
@@ -28,31 +34,49 @@ const getdata = async () => {
 getdata()
 
 const form = document.querySelector('form');
-form.addEventListener('submit', (e) => {
 
-  e.preventDefault();
-  clearInterval(interval);
 
-  totalTimeEl.textContent = timer
+if(form){
+  form.addEventListener('submit', (e) => {
 
-  let inputText = document.getElementById('inputtext').value.trim().toLowerCase()
-  let originalText = paragraph.trim().toLowerCase()
+    e.preventDefault();
+    clearInterval(interval);
+  
+    totalTimeEl.textContent = timer
+  
+    let inputText = document.getElementById('inputtext').value.trim().toLowerCase()
+    let originalText = paragraph.trim().toLowerCase()
+    // let output = inputText
 
-  if (inputText === originalText) {
-    result.textContent = 'Nice type'
-    result.style.color = 'green'
-  }
-  else {
-    result.textContent = 'Bad type'
-    result.style.color = 'red'
-  }
-
-})
+    
+    // for(let i = 0; i < originalText.length; i++){
+      
+      
+    //   if(output[i] != originalText[i]){
+    //     console.log(originalText[i],' =  ', inputText[i] , 'wrong');
+    //   }else{
+    //     console.log(originalText[i],' =  ', inputText[i]);
+    //   }
+      
+    // }
+ 
+    if (inputText === originalText) {
+      result.textContent = 'Nice type'
+      result.style.color = 'green'
+    }
+    else {
+      result.textContent = 'Bad type'
+      result.style.color = 'red'
+    }
+  })
+  
+}
+else{
+  console.log('form not found...');
+}
 
 const startTime = () => {
   timer = 0;
-  // displayCurrentTime.textContent = timer
-  // displayCurrentTime.style.color = 'red'
 
   interval = setInterval(() => {
     displayCurrentTime.textContent = timer

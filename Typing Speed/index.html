@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title></title>
+  <title>Document</title>
 </head>
-<p class="timer"></p>
+<body>
+  <p class="timer"></p>
 <p id="para"></p>
 <form>
-  <textarea name="inputtext" id="inputtext" rows="8" cols="40"></textarea>
+  <textarea name="inputtext" id="inputtext" rows="4" cols="50"></textarea>
+  <div class="output"></div>
 
   <button id="submit" type="submit">Submit</button>
 
   <div class="showDetails">
     <div class="time">Time : <span id="totalTime">0</span> sec</div>
+    <div class="showAccuracy">
+      Accuracy : <span id="accuracy">90.00%</span>
+    </div>
     <p id="result"></p>
   </div>
 
 </form>
-<body>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
