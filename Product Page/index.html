@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Product Page</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <h5>ApniDukan</h5>
+        <button id="cart-open">Cart (<span id="itemsCount">0</span>)</button>
+    </div>
+
+    <main>
+        <div class="product-container" id="product-list">
+        <!-- dinamically add products using js -->
+
+        </div>
+    </main>
+
+    <!-- cart model... -->
+    <div id="cart-model" class="cart-model hidden">
+     <div class="cart-content">
+        <span class="close-btn" id="close-cart">X</span>
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total : $ <span id="cart-total">0.00</span></p>
+     </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
