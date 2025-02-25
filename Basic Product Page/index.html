@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <title>Product Page</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="shopName">
+            <img src="./cartImage.png" alt="">
+            <h4>Shopcart</h4>
+        </div>
+        <div class="inputBar">
+            <input class="inputSearch" id="inputSearch" type="text" placeholder="Search...">
+            <i id="searchBtn" class="ri-search-line"></i>
+        </div>
+        <div class="AccountAndCart">
+            <h4> <span><i class="ri-account-circle-line"></i></span>Account</h4>
+            <h4 id="cart"> <span><i class="ri-shopping-cart-line"></i></span>Cart</h4>
+        </div>
+    </div>
+
+    <main>
+        <div class="product-container" id="product-list">
+
+        </div>
+    </main>
+
+    <div class="cart-container hidden " id="cart-container">
+        <h4>Shopping Cart</h4>
+        <span class="cart-close" id="cart-close">X</span>
+        <ul class="cart-items" id="cart-items">
+        </ul>
+        <h4>Total $ <span id="total">0</span></h4>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
