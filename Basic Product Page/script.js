@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartTotal = document.getElementById('total');
     const inputSearch = document.getElementById('inputSearch');
     const searchBtn = document.getElementById('searchBtn');
+    const searchProductList = document.getElementById('search-product-list')
 
 let products = []
     let cart = []
@@ -17,8 +18,12 @@ let products = []
             const data = await res.json();
 
             data.forEach(product => {
-                products.push(product.title.toLowerCase());
-// console.log(typeof product);
+                const image = product.image;
+                const title = product.title.toLowerCase();
+                const price = product.price;
+                const id = product.id;
+                products.push({image, title, price, id});
+                
 
                 let productCard = document.createElement("div");
                 productCard.classList.add("product")
@@ -80,18 +85,42 @@ let products = []
 
     }
 function SearchItem(searchItem){
-    products.forEach(itemName =>{
-        if(itemName.includes(searchItem)){
-            console.log(itemName);
+    searchProductList.innerHTML =""
+    products.forEach(product =>{
+        if(product.title.includes(searchItem)){
+            // console.log(itemName.title);
+            let productCard = document.createElement("div");
+            productCard.classList.add("product")
+            let productImage = document.createElement("div")
+                productImage.classList.add("product-image")
+                let productContent = document.createElement("div")
+                productContent.classList.add("product-content")
+                productImage.innerHTML = `
+                <img src="${product.image}" alt="Product-Image">
+                `;
+                productContent.innerHTML = `
+                <h4 class="product-title">${product.title.substring(0, 20)}<span> $ ${product.price}</span></h4>
+                <button class="add-to-cart" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}">Add to Cart</button>
+                `;
+                productCard.appendChild(productImage)
+                productCard.appendChild(productContent)
+                searchProductList.appendChild(productCard)
         }
     })
 }
 
 
+
     // Search Product 
     searchBtn.addEventListener('click', () => {
         let searchItem = inputSearch.value.toLowerCase();
-        SearchItem(searchItem);
+        if(searchItem !== ""){
+            SearchItem(searchItem);
+        }
+        else{
+            searchProductList.innerHTML="" 
+        }
+        
     })
 
 
